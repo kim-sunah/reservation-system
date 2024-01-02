@@ -1,32 +1,35 @@
-import { Reservation } from '../entities/reservation.entity';
-import { Seat } from '../entities/seat.entity';
+import { Reservation } from "../entities/reservation.entity";
+import { Seat } from "../entities/seat.entity";
 import {
   Column,
   CreateDateColumn,
   Entity,
   OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+  UpdateDateColumn
+} from "typeorm";
 
 @Entity({
-  name: 'shows',
+  name: "shows"
 })
 export class Show {
   @PrimaryGeneratedColumn()
   showSeq: number;
 
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: "varchar", nullable: false })
   name: string;
 
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: "varchar", nullable: false })
   description: string;
 
   @Column()
   date: Date;
 
   @Column()
-  image: string;
+  imageName: string;
+
+  @Column()
+  imageUrl: string;
 
   @Column()
   category: string;
